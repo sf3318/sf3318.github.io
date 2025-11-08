@@ -1,9 +1,9 @@
-name: Build and deploy Sphinx site to GitHub Pages
+name: Build and deploy Jupyter Book site to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # or 'master' if your default branch is master
+      - main  # build every time you push to main
 
 permissions:
   contents: read
@@ -26,13 +26,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # if JupyterBook:
-          # pip install jupyter-book
 
-      - name: Build HTML
+      - name: Build Jupyter Book
         run: |
-          make html
-          # or jupyter-book build .
+          jupyter-book build .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
