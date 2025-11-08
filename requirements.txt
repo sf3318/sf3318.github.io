@@ -8,3 +8,4 @@ statsmodels
 
 #Jupyter
 jupyter-book==1.*
+
