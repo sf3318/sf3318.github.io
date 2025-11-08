@@ -3,7 +3,7 @@ name: Build and deploy Jupyter Book site to GitHub Pages
 on:
   push:
     branches:
-      - main  # build every time you push to main
+      - main
 
 permissions:
   contents: read
@@ -30,11 +30,12 @@ jobs:
       - name: Build Jupyter Book
         run: |
           jupyter-book build .
+        working-directory: .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+          path: ./_build/html
 
   deploy:
     environment:
