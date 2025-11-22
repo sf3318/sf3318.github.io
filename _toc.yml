@@ -1,6 +1,5 @@
 format: jb-book
 root: index
 chapters:
-  - file: lecture_16_example
   - file: Project 1/Project 1
   - file: Project 2/Project 2
